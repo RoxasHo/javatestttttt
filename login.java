@@ -1,64 +1,66 @@
-package assingment;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package MoonRailSystem;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Scanner;
+/**
+ *
+ * @author User
+ */
 
-public class login {
+import java.util.*;
+
+public class loginMenu {
     public static void main(String[] args){
-    
-    Scanner scanner = new Scanner(System.in);
-    int userInput1;
-    
-    System.out.println("        ___       __   _______   ___       ________  ________  _____ ______   _______       ");
-    System.out.println("       |\\  \\     |\\  \\|\\  ___ \\ |\\  \\     |\\   ____\\|\\   __  \\|\\   _ \\  _   \\|\\  ___ \\      ");
-    System.out.println("       \\ \\  \\    \\ \\  \\ \\   __/|\\ \\  \\    \\ \\  \\___|\\ \\  \\|\\  \\ \\  \\\\\\__\\ \\  \\ \\   __/|     ");
-    System.out.println("        \\ \\  \\    \\ \\  \\ \\   __/|\\ \\  \\    \\ \\  \\___|\\ \\  \\|\\  \\ \\  \\\\\\__\\ \\  \\ \\   __/|    ");
-    System.out.println("         \\ \\  \\|\\__\\_\\  \\ \\  \\_|\\ \\ \\  \\____\\ \\  \\____\\ \\  \\\\\\  \\ \\  \\    \\ \\  \\ \\  \\_|\\ \\  ");
-    System.out.println("          \\ \\____________\\  \\_______\\ \\_______\\ \\_______\\ \\_______\\ \\__\\    \\ \\__\\ \\_______\\ ");
-    System.out.println("           \\ \\____________\\  \\_______\\ \\_______\\ \\_______\\ \\_______\\ \\__\\    \\ \\__\\ \\_______\\");
-    System.out.print("\n                                       ");
-    System.out.print("\n              ++=====================++");
-    System.out.print("\n              ||                     ||");
-    System.out.print("\n              ||     1. Staff        ||");
-    System.out.print("\n              ||     2. Customer     ||");
-    System.out.print("\n              ||                     ||");
-    System.out.print("\n              ||     3. Exit         ||");
-    System.out.print("\n              ||                     ||");
-    System.out.print("\n              ++=====================++");
-    
-    userInput1 = scanner.nextInt();
-    
-    try{
-        while(true){
-            System.out.print("Please select a choice: ");
+        Scanner scanner = new Scanner(System.in);
+        int loginChoice = 0;
+        
+        while (loginChoice != 3) {
+            System.out.print("++===================================================================================================================++\n");
+            System.out.print("||       ___       ___    ________     ___          ________     ________     _____________     ________             ||\n");
+            System.out.print("||      |\\  \\     |\\  \\  |\\   ____\\   |\\  \\        |\\   ____\\   |\\   ___  \\  |\\   __   __   \\  |\\   ____\\            ||\n");
+            System.out.print("||      \\ \\  \\    \\ \\  \\ \\ \\  \\___|   \\ \\  \\       \\ \\  \\___|   \\ \\  \\  \\  \\ \\ \\  \\ |\\_|\\ \\  \\ \\ \\  \\___|            ||\n");
+            System.out.print("||       \\ \\  \\   _\\ \\  \\ \\ \\   _\\     \\ \\  \\       \\ \\  \\       \\ \\  \\  \\  \\ \\ \\  \\ \\|| \\ \\  \\ \\ \\   _\\             ||\n");
+            System.out.print("||        \\ \\  \\__| \\_\\  \\ \\ \\  \\|____  \\ \\  \\_____  \\ \\  \\_____  \\ \\  \\__\\  \\ \\ \\  \\     \\ \\  \\ \\ \\  \\|____         ||\n");
+            System.out.print("||         \\ \\____________\\ \\ \\________\\ \\ \\________\\ \\ \\________\\ \\ \\________\\ \\ \\  \\     \\ \\  \\ \\ \\________\\       ||\n");
+            System.out.print("||          \\|____________|  \\|________|  \\|________|  \\|________|  \\|________|  \\|___|     \\|___| \\|________|       ||\n");
+            System.out.print("||                                                                                                                   ||\n");
+            System.out.print("++===================================================================================================================++\n");
+            System.out.print("\n");
+            System.out.print("\n                                ++===================================================++");
+            System.out.print("\n                                ||                                                   ||");
+            System.out.print("\n                                ||     Welcome to MoonRail!                          ||");
+            System.out.print("\n                                ||     Please choose a login method to continue:     ||");
+            System.out.print("\n                                ||                                                   ||");
+            System.out.print("\n                                ||     1. Staff                                      ||");
+            System.out.print("\n                                ||     2. Customer                                   ||");
+            System.out.print("\n                                ||                                                   ||");
+            System.out.print("\n                                ||     3. Exit                                       ||");
+            System.out.print("\n                                ||                                                   ||");
+            System.out.print("\n                                ++===================================================++");
             
-            if (userInput1<3){
-                switch(userInput1){
+            try{
+                System.out.print("Please select a choice: ");
+                loginChoice = scanner.nextInt();
+               
+                switch(loginChoice){
                     case '1' :
-                        staffMenu.main(args);
+                        System.out.print("Choice 1");
                         break;
                     case '2' :
-                        main_menu.main(args);
+                        System.out.print("Choice 2");
                         break;
                     case '3' :
+                        System.out.print("Choice 3");
                         break;
+                    default :
+                        System.out.println("Error: Invalid action\n");
                 }
             }
-            else
-            {
-                System.out.println("Error: Invalid action\n");
+            catch(StringIndexOutOfBoundsException ex){
+                System.out.println("Not a valid input...");
             }
         }
     }
-    catch (StringIndexOutOfBoundsException ex)
-    {
-        System.out.println("Not a valid input...");
-    }
-}
 }
